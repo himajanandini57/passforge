@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Password Generator</h1>
+    <button id="theme-toggle" type="button" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="output">
+        <input id="password" type="text" readonly placeholder="Click Generate" aria-label="Generated password" />
+        <button id="copy-btn" type="button" class="secondary">Copy</button>
+      </div>
+
+      <div class="strength">
+        <div class="bar"><div id="strength-fill"></div></div>
+        <span id="strength-text" class="muted">Strength</span>
+      </div>
+
+      <div class="option">
+        <label for="length">Length: <strong id="length-value">12</strong></label>
+        <input id="length" type="range" min="6" max="32" value="12" />
+      </div>
+
+      <div class="checks">
+        <label><input id="uppercase" type="checkbox" checked /> Uppercase (A-Z)</label>
+        <label><input id="lowercase" type="checkbox" checked /> Lowercase (a-z)</label>
+        <label><input id="numbers" type="checkbox" checked /> Numbers (0-9)</label>
+        <label><input id="symbols" type="checkbox" checked /> Symbols (!@#$)</label>
+      </div>
+
+      <p id="message" class="muted" role="status"></p>
+
+      <button id="generate-btn" type="button" class="primary">Generate password</button>
+    </section>
+
+    <section class="card">
+      <h2>Recent passwords</h2>
+      <ul id="history" class="history"></ul>
+      <p id="history-empty" class="muted">Nothing yet.</p>
+      <button id="clear-btn" type="button" class="secondary hidden">Clear history</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
